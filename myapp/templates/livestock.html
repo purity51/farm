@@ -1,0 +1,134 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Farm | Growing Today, For Tomorrow</title>
+ <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <header>
+    <img src="{% static 'images/WhatsApp Image 2026-04-28 at 14.13.38.jpeg' %}" alt="Farm logo" class="logo">
+    <div class="header-text">
+      <h1>Lenzis <span>Agro</span> Company</h1>
+      <p>Growing today, for tomorrow. Reliable farming solutions rooted in quality, innovation and trust.</p>
+    </div>
+  </header>
+
+  <!-- ══ NAVIGATION ══ -->
+  <nav>
+    <a href="{% url 'index' %}">Home</a>
+    <a href="{% url 'aboutus' %}">About Us</a>
+    <a href="{% url 'crop' %}">Crops</a>
+    <a href="{% url 'livestock' %}">Livestock</a>
+    <a href="{% url 'apiculture' %}">Apiculture</a>
+    <a href="{% url 'poultry' %}">Poultry</a>
+    <a href="{% url 'customer' %}">Customer Page</a>
+  </nav>
+
+  <!-- ══ HERO BANNER ══ -->
+  <div class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">Est. on the land we love</p>
+      <h2>From Our Fields<br>To Your Table</h2>
+      <p>Quality livestock, thriving crops, and sustainable practices — rooted in generations of farming tradition.</p>
+      <a href="aboutus.html" class="hero-btn">Discover Our Story</a>
+    </div>
+  </div>
+
+  <!-- ══ MAIN CONTENT ══ -->
+  <main>
+
+    <!-- Sheep -->
+    <section class="gallery-section">
+      <div class="section-head">
+        <div class="icon">🐑</div>
+        <h2>Sheep</h2>
+        <div class="rule"></div>
+      </div>
+      <div class="gallery-grid">
+        <div class="img-wrap"><img src="{% static 'images/dendoktoor-sheep-6094611_1920.jpg' %}" alt="Sheep in the field"></div>
+        <div class="img-wrap"><img src="{% static 'images/s.jpg' %}"   alt="Sheep"></div>
+        <div class="img-wrap"><img src="{% static 'images/sh.jpg' %}"  alt="Sheep"></div>
+        <div class="img-wrap"><img src="{% static 'images/she.jpg' %}" alt="Sheep"></div>
+      </div>
+    </section>
+
+    <!-- Goats -->
+    <section class="gallery-section">
+      <div class="section-head">
+        <div class="icon">🐐</div>
+        <h2>Goats</h2>
+        <div class="rule"></div>
+      </div>
+      <div class="gallery-grid">
+        
+        <div class="img-wrap"><img src="{% static 'images/goa.jpg' %}"  alt="Goat"></div>
+        <div class="img-wrap"><img src="{% static 'images/ga.jpg' %}"   alt="Goat"></div>
+        <div class="img-wrap"><img src="{% static 'images/goat.jpg' %}"  alt="Goat"></div>
+        <div class="img-wrap"><img src="{% static 'images/goat.jpg' %}" alt="Goats grazing"></div>
+      </div>
+    </section>
+
+    <!-- Ducks -->
+    <section class="gallery-section">
+      <div class="section-head">
+        <div class="icon">🦆</div>
+        <h2>Ducks</h2>
+        <div class="rule"></div>
+      </div>
+      <div class="gallery-grid">
+        <div class="img-wrap"><img src="{% static 'images/d.jpg' %}"  alt="Duck"></div>
+        <div class="img-wrap"><img src="{% static 'images/dendoktoor-duck-7401434_1920.jpg' %}" alt="Duck"></div>
+        <div class="img-wrap"><img src="{% static 'images/dendoktoor-duck-8297667_1920.jpg' %}" alt="Duck"></div>
+        <div class="img-wrap"><img src="{% static 'images/fotorain-duck-3440580_1920.jpg' %}"   alt="Duck in water"></div>
+        <div class="img-wrap"><img src="{% static 'images/birgl-bird-7709691_1920.jpg' %}"      alt="Bird"></div>
+      </div>
+    </section>
+
+    <!-- Cows & Dairy -->
+    <section class="gallery-section">
+      <div class="section-head">
+        <div class="icon">🐄</div>
+        <h2>Cows &amp; Dairy</h2>
+        <div class="rule"></div>
+      </div>
+      <div class="gallery-grid">
+        <div class="img-wrap"><img src="{% static 'images/captureyourlife-cow-3213932_1920.jpg' %}" alt="Cow in field"></div>
+        <div class="img-wrap"><img src="{% static 'images/c.jpg' %}"   alt="Cow"></div>
+      <div class="img-wrap"><img src="{% static 'images/co.jpg' %}"  alt="Cow"></div>
+        <div class="img-wrap"><img src="{% static 'images/mi.jpg' %}"  alt="Milk"></div>
+        <div class="img-wrap"><img src="{% static 'images/mil.jpg' %}" alt="Milk"></div>
+        <div class="img-wrap"><img src="{% static 'images/milk.jpg' %}" alt="Fresh milk"></div>
+        <div class="img-wrap"><img src="{% static 'images/milk.jpg' %}" alt="Fresh milk"></div>
+      </div>
+    </section>
+ <section class="gallery-section">
+      <div class="section-head">
+        <div class="icon">🦆</div>
+        <h2>Geese</h2>
+        <div class="rule"></div>
+      </div>
+      <div class="gallery-grid">
+        <div class="img-wrap"><img src="{% static 'images/goos.jpg' %}"  alt="geese"></div>
+        <div class="img-wrap"><img src="{% static 'images/gee.jpg' %}" alt="geese"></div>
+        <div class="img-wrap"><img src="{% static 'images/goose.jpg' %}" alt="Duck"></div>
+        <div class="img-wrap"><img src="{% static 'images/g.jpg' %}"   alt="Duck in water"></div>
+        
+      </div>
+    </section>
+  </main>
+
+  <!-- ══ FOOTER ══ -->
+ <footer>
+  <div class="footer-logo">Lenzis <span>Agro</span> Limited</div>
+  <p>Growing today, for tomorrow.</p>
+  <div class="social-icons">
+    <a href="https://instagram.com/lenzisagro" target="_blank" class="ig" title="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://tiktok.com/@lenzisagro" target="_blank" class="tt" title="TikTok"><i class="fab fa-tiktok"></i></a>
+    <a href="https://wa.me/254705070469" target="_blank" class="wa" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  </div>
+  <p class="copy">&copy; 2026 Lenzis Agro Limited. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

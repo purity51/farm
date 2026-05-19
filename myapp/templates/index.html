@@ -1,0 +1,170 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lenzis Agro Limited</title>
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+<header>
+    <img src="{% static 'images/WhatsApp Image 2026-04-28 at 14.13.38.jpeg' %}" alt="Farm logo" class="logo">
+    <div class="header-text">
+      <h1>Lenzis <span>Agro</span> Company</h1>
+      <p>Growing today, for tomorrow. Reliable farming solutions rooted in quality, innovation and trust.</p>
+    </div>
+  </header>
+  
+
+  <nav>
+    <a href="{% url 'index' %}">Home</a>
+    <a href="{% url 'aboutus' %}">About Us</a>
+    <a href="{% url 'crop' %}">Crops</a>
+    <a href = "{% url 'livestock' %}">Livestock</a>
+    <a href="{% url 'apiculture' %}">Apiculture</a>
+    <a href="{% url 'poultry' %}">Poultry</a>
+    <a href="{% url 'customer' %}">Customer Page</a>
+  </nav>
+
+ 
+
+  <div class="hero">
+    <h2>Welcome to Lenzis Company</h2>
+    <p>From our farm to your table — fresh, healthy and natural.</p>
+  </div>
+
+  <section id="products">
+    <h2>🌿 Our Products</h2>
+
+    <div class="poultry-grid">
+
+      <article>
+        <div class="card-inner">
+          <h3>🐓 Chicken</h3>
+          <p>Both meat and egg production.</p>
+          <ul>
+            <li>Raised with care, delivered with pride</li>
+            <li>Free range, full of flavour</li>
+            <li>Real chicken, real taste</li>
+          </ul>
+          <button><a href="/chicken/">Visit Gallery</a></button>
+        </div>
+      </article>
+
+      <article>
+        <div class="card-inner">
+          <h3>🦆 Ducks</h3>
+          <p>Our ducks live well so you eat well.</p>
+          <ul>
+            <li>Excellence in every feather, perfect in every bite</li>
+            <li>Naturally raised, professionally delivered</li>
+            <li>Where quality duck farming meets modern standards</li>
+          </ul>
+          <button><a href="/duck/">Visit Gallery</a></button>
+        </div>
+      </article>
+
+      <article>
+        <div class="card-inner">
+          <h3>🐄 Cattle</h3>
+          <p>We raise healthy, free-range cattle using sustainable farming practices.</p>
+          <ul>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+            <li>High quality beef</li>
+            <li>From our green pastures to your glass</li>
+            <li>Fresh milk starts with happy cows</li>
+          </ul>
+          <button><a href="/cows/">Visit Gallery</a></button>
+        </div>
+      </article>
+
+      <article>
+        <div class="card-inner">
+          <h3>🐐 Galla Goats</h3>
+          <p>Highly resilient and adapted to semi-arid conditions.</p>
+          <ul>
+            <li>Kenya's most indigenous breed</li>
+            <li>Supplying quality stock to farmers across the region</li>
+            <li>Raised with pride on our farm</li>
+          </ul>
+          <button><a href="/goat/">Visit Gallery</a></button>
+        </div>
+      </article>
+
+      <article>
+        <div class="card-inner">
+          <h3>🐐 Boer Goats</h3>
+          <p>Premium meat production.</p>
+          <ul>
+            <li>World renowned for superior meat quality</li>
+            <li>World's leading meat goat breed</li>
+          </ul>
+          <button><a href="/sheep/">Visit Gallery</a></button>
+        </div>
+      </article>
+
+      <article>
+        <div class="card-inner">
+          <h3>🧅 Onions</h3>
+          <p>Continuous production to meet year-round demand.</p>
+          <ul>
+            <li>Fresh, full of flavour</li>
+            <li>Naturally grown, chemical free</li>
+            <li>Delivered straight to your market</li>
+          </ul>
+          <button><a href="/onion/">Visit Gallery</a></button>
+        </div>
+      </article>
+
+      <article>
+        <div class="card-inner">
+          <h3>🍉 Watermelons</h3>
+          <p>High yield varieties targeting domestic and export markets.</p>
+          <ul>
+            <li>Sweet, juicy and naturally grown</li>
+            <li>Pesticide-free, packed with vitamins</li>
+            <li>Nothing beats a fresh watermelon on a sunny day</li>
+          </ul>
+          <button><a href="/watermelon/">Visit Gallery</a></button>
+        </div>
+      </article>
+
+      <article>
+        <div class="card-inner">
+          <h3>🪿 Geese</h3>
+          <p>Niche and emerging market supply.</p>
+          <ul>
+            <li>Goose meat is a premium delicacy</li>
+            <li>Naturally raised for the finest meat and eggs</li>
+          </ul>
+          <button><a href="/goose/">Visit Gallery</a></button>
+        </div>
+      </article>
+
+      <article>
+        <div class="card-inner">
+          <h3>🥜 Groundnuts</h3>
+          <p>Commercial production for bulk supplies.</p>
+          <ul>
+            <li>Fresh, protein-rich groundnuts</li>
+            <li>Grown on Kenya's fertile soil</li>
+          </ul>
+          <button><a href="/groundnuts/">Visit Gallery</a></button>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+ <footer>
+  <div class="footer-logo">Lenzis <span>Agro</span> Limited</div>
+  <p>Growing today, for tomorrow.</p>
+  <div class="social-icons">
+    <a href="https://instagram.com/lenzisagro" target="_blank" class="ig" title="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://tiktok.com/@lenzisagro" target="_blank" class="tt" title="TikTok"><i class="fab fa-tiktok"></i></a>
+    <a href="https://wa.me/254705070469" target="_blank" class="wa" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  </div>
+  <p class="copy">&copy; 2026 Lenzis Agro Limited. All rights reserved.</p>
+</footer>
+</body>
+</html>

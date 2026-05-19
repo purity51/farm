@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+    <img src="{% static 'images/WhatsApp Image 2026-04-28 at 14.13.38.jpeg' %}" alt="Farm logo" class="logo">
+    <div class="header-text">
+      <h1>Lenzis <span>Agro</span> Company</h1>
+      <p>Growing today, for tomorrow. Reliable farming solutions rooted in quality, innovation and trust.</p>
+    </div>
+  </header>
+    <nav>
+       <a href="{% url 'index' %}">Home</a>
+       <a href="{% url 'aboutus' %}">About Us</a>
+       <a href="{% url 'crop' %}">Crops</a>
+       <a href="{% url 'livestock' %}">Livestock</a>
+       <a href="{% url 'apiculture' %}">Apiculture</a>
+       <a href="{% url 'poultry' %}">Poultry</a>
+       <a href="{% url 'customer' %}">Customer Page</a>
+    </nav>
+    <img src="{% static 'images/bee.jpg' %}" alt="" height="600" width="600">
+    <img src="{% static 'images/beee.jpg' %}" alt="" height="600" width="600">
+    <img src="{% static 'images/hives.jpg' %}" alt="" height="600" width="600">
+    <img src="{% static 'images/bee.jpg' %}" alt="" height="600" width="600">
+    <img src="{% static 'images/honey.jpg' %}" alt="" height="600" width="600">
+    <img src="{% static 'images/honey.jpg' %}" alt="" height="600" width="600">
+    <img src="{% static 'images/peci.jpg' %}" alt="" height="600" width="600">
+    <img src="{% static 'images/xel.jpg' %}" alt="" height="600" width="600">
+    <img src="{% static 'images/pic.jpg' %}" alt="" height="600" width="600">
+   <footer>
+  <div class="footer-logo">Lenzis <span>Agro</span> Limited</div>
+  <p>Growing today, for tomorrow.</p>
+  <div class="social-icons">
+    <a href="https://instagram.com/lenzisagro" target="_blank" class="ig" title="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://tiktok.com/@lenzisagro" target="_blank" class="tt" title="TikTok"><i class="fab fa-tiktok"></i></a>
+    <a href="https://wa.me/254705070469" target="_blank" class="wa" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  </div>
+  <p class="copy">&copy; 2026 Lenzis Agro Limited. All rights reserved.</p>
+</footer>
+</body>
+</html>

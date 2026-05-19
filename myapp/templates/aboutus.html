@@ -1,0 +1,159 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Lenzis Agro LTD</title>
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+
+  <header>
+    <img src="{% static 'mages/WhatsApp Image 2026-04-28 at 14.13.38.jpeg' %}" alt="Farm logo" class="logo">
+    <div class="header-text">
+      <h1>Lenzis <span>Agro</span> Company</h1>
+      <p>Growing today, for tomorrow. Reliable farming solutions rooted in quality, innovation and trust.</p>
+    </div>
+  </header>
+
+  <nav>
+    <a href="{% url 'index' %}">Home</a>
+    <a href="{% url 'aboutus' %}">About Us</a>
+    <a href="{% url 'crop' %}">Crops</a>
+    <a href="{% url 'livestock' %}">Livestock</a>
+    <a href="{% url 'apiculture' %}">Apiculture</a>
+    <a href="{% url 'poultry' %}">Poultry</a>
+    <a href="{% url 'customer' %}">Customer Page</a>
+  
+  </nav>
+
+  <div class="page-hero">
+    <p class="eyebrow">Who we are</p>
+    <h2>Company <em>Overview</em></h2>
+  </div>
+
+  <main>
+
+    <!-- 1. About the Company -->
+    <div class="overview-card">
+      <p class="section-label">About the company</p>
+      <p>
+        <strong>Lenzis Agro LTD</strong> is a professionally managed agribusiness enterprise 
+        focused exclusively on large-scale agricultural <strong>production and market distribution.</strong> 
+        The company specialises in high-demand crops and livestock, supplying consistent, 
+        high-quality products to both <strong>local and international markets.</strong>
+      </p>
+      <p>
+        Strategically located in <strong>Nthia, along Wote-Makindu Road,</strong> the company 
+        operates on approximately <strong>50 hectares of land,</strong> enabling scalable, 
+        efficient, and commercially viable agricultural operations.
+      </p>
+    </div>
+
+    <!-- 2. Meet the Founder -->
+   <!-- 2. Meet the Founder -->
+<div style="max-width:900px; margin:30px auto; background:#fff; border-radius:12px; padding:25px; box-shadow:0 2px 10px rgba(0,0,0,0.08);">
+  
+  <p class="section-label">Meet the Founder</p>
+
+  <div style="display:flex; flex-direction:row; align-items:center; gap:20px; margin-bottom:20px;">
+    <img src="{% static 'mages/emmanuel.jpeg' %}" alt="Emmanuel Mbelenzi" 
+      style="width:100px; height:100px; border-radius:50%; object-fit:cover; border:3px solid green; flex-shrink:0;">
+    <div>
+      <h2 style="font-size:1.3rem; margin-bottom:4px;">Emmanuel Mbelenzi</h2>
+      <p style="color:green; font-weight:bold; font-size:0.9rem;">"Yellow Trail" — Founder & Visionary</p>
+    </div>
+  </div>
+
+  <p style="font-size:0.9rem; line-height:1.7; color:#333; margin-bottom:10px;">
+    Emmanuel Mbelenzi is the founder of <strong>Mbel Capital Holdings Limited</strong>, 
+    a company built on the pillars of discipline, resilience and mental awareness. 
+    Established in <strong>2020</strong> during the Covid-19 pandemic, Mbel Capital Holdings 
+    has grown into a diversified investment group, among them 
+    <strong>Lenzis Agro Ltd</strong> — focused on agriculture, crop and animal production.
+  </p>
+
+  <p style="font-size:0.9rem; line-height:1.7; color:#333; margin-bottom:10px;">
+    A self-driven entrepreneur, Emmanuel operates the <strong>largest watermelon farm in Kajiado County</strong> 
+    — over <strong>16 hectares</strong> producing more than <strong>1,600 metric tonnes per year</strong>.
+  </p>
+
+  <p style="font-style:italic; color:green; border-left:3px solid green; padding-left:12px; margin:15px 0;">
+    "Growing today, for tomorrow."
+  </p>
+
+  <div style="text-align:center; margin-top:20px; padding-top:15px; border-top:1px solid #eee;">
+    <img src="{% static 'mages/mbel-logo.jpeg' %}" alt="Mbel Capital Holdings Ltd" style="width:140px;">
+    <p style="font-weight:bold; color:#1a1a6e; margin-top:8px;">Mbel Capital Holdings Limited</p>
+    <p style="font-style:italic; font-size:0.8rem; color:#666;">Parent company of Lenzis Agro Ltd</p>
+  </div>
+
+</div>
+
+    <!-- 3. Vision & Mission -->
+    <div class="pillars">
+      <div class="pillar-card" style="animation: fadeUp 0.5s ease 0.25s both;">
+        <span class="pillar-num">01</span>
+        <span class="pillar-icon">🌍</span>
+        <h3>Vision</h3>
+        <p>To be a leading agricultural production and distribution company in Africa, 
+        recognised for quality, reliability and sustainable farming excellence.</p>
+      </div>
+
+      <div class="pillar-card" style="animation: fadeUp 0.5s ease 0.35s both; border-top-color: var(--gold);">
+        <span class="pillar-num">02</span>
+        <span class="pillar-icon">🌱</span>
+        <h3>Mission</h3>
+        <p>To efficiently produce and supply premium agricultural and livestock products 
+        to local and international markets through modern farming practices, strong 
+        distribution networks and market-driven strategies.</p>
+      </div>
+    </div>
+
+    <!-- 4. Core Values -->
+    <section class="values-section">
+      <div class="values-header">
+        <div class="icon">⚖️</div>
+        <h2>Core Values</h2>
+        <div class="rule"></div>
+      </div>
+      <ul class="values-list">
+        <li>
+          <div class="val-dot"></div>
+          <div class="val-body"><strong>Professionalism —</strong> Structured, efficient, and result-driven operations.</div>
+        </li>
+        <li>
+          <div class="val-dot"></div>
+          <div class="val-body"><strong>Quality Assurance —</strong> Consistent delivery of premium-grade products.</div>
+        </li>
+        <li>
+          <div class="val-dot"></div>
+          <div class="val-body"><strong>Sustainability —</strong> Responsible land and resource management.</div>
+        </li>
+        <li>
+          <div class="val-dot"></div>
+          <div class="val-body"><strong>Integrity —</strong> Transparent and ethical business practices.</div>
+        </li>
+        <li>
+          <div class="val-dot"></div>
+          <div class="val-body"><strong>Market Focus —</strong> Production aligned with demand and profitability.</div>
+        </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer>
+  <div class="footer-logo">Lenzis <span>Agro</span> Limited</div>
+  <p>Growing today, for tomorrow.</p>
+  <div class="social-icons">
+    <a href="https://instagram.com/lenzisagro" target="_blank" class="ig" title="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://tiktok.com/@lenzisagro" target="_blank" class="tt" title="TikTok"><i class="fab fa-tiktok"></i></a>
+    <a href="https://wa.me/254705070469" target="_blank" class="wa" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  </div>
+  <p class="copy">&copy; 2026 Lenzis Agro Limited. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

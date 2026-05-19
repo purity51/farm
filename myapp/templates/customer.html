@@ -1,0 +1,504 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Now — Lenzis Agro</title>
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+<header>
+    <img src="{% static 'images/WhatsApp Image 2026-04-28 at 14.13.38.jpeg' %}" alt="Farm logo" class="logo">
+    <div class="header-text">
+      <h1>Lenzis <span>Agro</span> Company</h1>
+      <p>Growing today, for tomorrow. Reliable farming solutions rooted in quality, innovation and trust.</p>
+    </div>
+    <style>
+
+    /* FORM WRAP */
+    .form-wrap {
+      max-width: 700px;
+      margin: 36px auto;
+      padding: 0 18px 60px;
+    }
+
+    /* CARD */
+    .card {
+      background: #fff;
+      border: 1px solid #ddd4c0;
+      border-radius: 12px;
+      padding: 26px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    .card-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #2d5a1b;
+      border-bottom: 2px solid #c8922a;
+      padding-bottom: 9px;
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+
+    /* ROWS */
+    .row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+    @media(max-width:560px){ .row { grid-template-columns: 1fr; } }
+
+    /* LABELS & INPUTS */
+    label {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      color: #777;
+      margin-bottom: 5px;
+    }
+    input[type=text], input[type=email], input[type=tel],
+    input[type=number], select, textarea {
+      width: 100%;
+      padding: 10px 13px;
+      border: 1.5px solid #ddd4c0;
+      border-radius: 8px;
+      font-size: 14px;
+      color: #1a1a1a;
+      background: #fafaf8;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    input:focus, select:focus, textarea:focus {
+      border-color: #4a7c34;
+      background: #fff;
+    }
+    textarea { resize: vertical; min-height: 85px; }
+
+    /* PRODUCT BLOCK */
+    .product-block {
+      border: 1.5px solid #e0d8c8;
+      border-radius: 10px;
+      padding: 16px;
+      margin-bottom: 14px;
+      background: #fafaf8;
+    }
+    .product-block h4 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #2d5a1b;
+      margin-bottom: 13px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .product-block h4 i { color: #c8922a; }
+    .product-block .note {
+      font-size: 12px;
+      color: #999;
+      font-style: italic;
+      margin-top: 4px;
+    }
+    .subtotal {
+      margin-top: 10px;
+      padding: 10px 14px;
+      background: #eef5e8;
+      border-radius: 7px;
+      font-size: 14px;
+      color: #2d5a1b;
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /* TOTAL */
+    .total-bar {
+      background: #2d5a1b;
+      color: #fff;
+      border-radius: 10px;
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 14px;
+    }
+    .total-bar span { font-size: 14px; opacity: 0.85; }
+    .total-bar strong { font-size: 1.5rem; color: #f0c040; }
+
+    /* RADIO */
+    .radio-group { display: flex; gap: 18px; flex-wrap: wrap; margin-bottom: 16px; }
+    .radio-group label {
+      display: flex; align-items: center; gap: 7px;
+      font-size: 14px; text-transform: none; letter-spacing: 0;
+      color: #1a1a1a; cursor: pointer; font-weight: 400;
+    }
+    .radio-group input[type=radio] { accent-color: #2d5a1b; width: 16px; height: 16px; }
+
+    /* NEGOTIABLE */
+    .negotiable {
+      background: #fff3e0; color: #c8922a;
+      font-size: 11px; font-weight: 700;
+      padding: 2px 8px; border-radius: 20px;
+      border: 1px solid #c8922a; margin-left: 6px;
+    }
+
+    /* SUBMIT */
+    .btn-submit {
+      width: 100%; padding: 16px;
+      background: #2d5a1b; color: #fff;
+      border: none; border-radius: 10px;
+      font-size: 1rem; font-weight: 700;
+      letter-spacing: 1px; text-transform: uppercase;
+      cursor: pointer; transition: background 0.2s, transform 0.1s;
+    }
+    .btn-submit:hover { background: #4a7c34; transform: translateY(-1px); }
+
+    /* OR DIVIDER */
+    .or-divider {
+      text-align: center; color: #aaa;
+      font-size: 13px; margin: 14px 0;
+      position: relative;
+    }
+    .or-divider::before, .or-divider::after {
+      content: ''; position: absolute;
+      top: 50%; width: 42%; height: 1px; background: #ddd;
+    }
+    .or-divider::before { left: 0; }
+    .or-divider::after { right: 0; }
+
+    /* WHATSAPP */
+    .btn-whatsapp {
+      display: flex; align-items: center; justify-content: center;
+      gap: 10px; width: 100%; padding: 14px;
+      background: #25d366; color: #fff;
+      border: none; border-radius: 10px;
+      font-size: 15px; font-weight: 600;
+      text-decoration: none; transition: background 0.2s;
+    }
+    .btn-whatsapp:hover { background: #1ebe5d; }
+    .btn-whatsapp i { font-size: 20px; }
+
+    /* FOOTER */
+    </style>
+  </header>
+<nav>
+  <a href="{% url 'index' %}">Home</a>
+  <a href="{% url 'aboutus' %}">About Us</a>
+  <a href="{% url 'crop' %}">Crops</a>
+  <a href="{% url 'livestock' %}">Livestock</a>
+  <a href="{% url 'apiculture' %}">Apiculture</a>
+  <a href="{% url 'poultry' %}">Poultry</a>
+  <a href="{% url 'customer' %}">Order Now</a>
+</nav>
+
+<div class="hero">
+  <h1>Place Your Order</h1>
+  <p>Fresh from our farm. Fill in your details and we'll get back to you promptly.</p>
+</div>
+
+<div class="form-wrap">
+  <form id="orderForm" action="{% url 'customer' %}" method="POST" onsubmit="handleSubmit(event)">
+    {% csrf_token %}
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_subject" value="New Order — Lenzis Agro">
+    <input type="hidden" name="_next" value="https://purity51.github.io/lenzis/thankyou.html">
+    <input type="hidden" name="order_total" id="hiddenTotal" value="">
+
+    <!-- 1. PERSONAL INFO -->
+    <div class="card">
+      <div class="card-title">1. Personal Information</div>
+      <div class="row">
+        <div>
+          <label>First Name *</label>
+          <input type="text" name="first_name" placeholder="e.g. James" required>
+        </div>
+        <div>
+          <label>Last Name *</label>
+          <input type="text" name="last_name" placeholder="e.g. Mwangi" required>
+        </div>
+      </div>
+      <div class="row">
+        <div>
+          <label>Phone Number *</label>
+          <input type="tel" name="phone" placeholder="+254 7XX XXX XXX" required>
+        </div>
+        <div>
+          <label>Email Address</label>
+          <input type="email" name="email" placeholder="you@example.com">
+        </div>
+      </div>
+      <div class="row">
+        <div>
+          <label>County *</label>
+          <input type="text" name="county" placeholder="e.g. Machakos" required>
+        </div>
+        <div>
+          <label>Town / Area *</label>
+          <input type="text" name="town" placeholder="e.g. Athi River" required>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. PRODUCTS -->
+    <div class="card">
+      <div class="card-title">2. Select Your Products</div>
+
+      <!-- EGGS -->
+      <div class="product-block">
+        <h4><i class="fa-solid fa-egg"></i> Eggs</h4>
+        <div class="row">
+          <div>
+            <label>Sale Type</label>
+            <select onchange="calcEggs()" id="eggType">
+              <option value="">-- Select --</option>
+              <option value="retail">Retail — KES 450 / tray (min 1)</option>
+              <option value="wholesale">Wholesale — KES 300 / tray (min 12 trays)</option>
+            </select>
+          </div>
+          <div>
+            <label>Quantity (trays)</label>
+            <input type="number" id="eggQty" name="egg_qty" min="1" placeholder="0" oninput="calcEggs()">
+            <p class="note" id="eggNote"></p>
+          </div>
+        </div>
+        <div class="subtotal"><span>Eggs subtotal</span><span id="eggTotal">KES 0</span></div>
+      </div>
+
+      <!-- CHICKS -->
+      <div class="product-block">
+        <h4><i class="fa-solid fa-feather"></i> Chicks</h4>
+        <div class="row">
+          <div>
+            <label>Age</label>
+            <select onchange="calcChicks()" id="chickAge">
+              <option value="">-- Select --</option>
+              <option value="100">Day-old — KES 100 each</option>
+              <option value="100">1 Week old — KES 100 each</option>
+              <option value="250">2 Weeks old — KES 250 each</option>
+            </select>
+          </div>
+          <div>
+            <label>Quantity (min 3)</label>
+            <input type="number" id="chickQty" name="chick_qty" min="3" placeholder="0" oninput="calcChicks()">
+          </div>
+        </div>
+        <div class="subtotal"><span>Chicks subtotal</span><span id="chickTotal">KES 0</span></div>
+      </div>
+
+      <!-- CHICKEN -->
+      <div class="product-block">
+        <h4><i class="fa-solid fa-drumstick-bite"></i> Chicken (Broilers / Layers)</h4>
+        <div class="row">
+          <div>
+            <label>Size</label>
+            <select onchange="calcChicken()" id="chickenSize">
+              <option value="">-- Select --</option>
+              <option value="800">Small — KES 800 each</option>
+              <option value="1000">Large — KES 1,000 each</option>
+            </select>
+          </div>
+          <div>
+            <label>Quantity (min 3)</label>
+            <input type="number" id="chickenQty" name="chicken_qty" min="3" placeholder="0" oninput="calcChicken()">
+          </div>
+        </div>
+        <div class="subtotal"><span>Chicken subtotal</span><span id="chickenTotal">KES 0</span></div>
+      </div>
+
+      <!-- GOATS -->
+      <div class="product-block">
+        <h4><i class="fa-solid fa-horse-head"></i> Goats</h4>
+        <div class="row">
+          <div>
+            <label>Size</label>
+            <select onchange="calcGoats()" id="goatSize">
+              <option value="">-- Select --</option>
+              <option value="2000">Small — KES 2,000</option>
+              <option value="5000">Medium — KES 5,000</option>
+              <option value="8000">Large — KES 8,000</option>
+            </select>
+          </div>
+          <div>
+            <label>Quantity (min 3)</label>
+            <input type="number" id="goatQty" name="goat_qty" min="3" placeholder="0" oninput="calcGoats()">
+          </div>
+        </div>
+        <div class="subtotal"><span>Goats subtotal</span><span id="goatTotal">KES 0</span></div>
+      </div>
+
+      <!-- SHEEP -->
+      <div class="product-block">
+        <h4><i class="fa-solid fa-sheep"></i> Sheep</h4>
+        <div class="row">
+          <div>
+            <label>Size</label>
+            <select onchange="calcSheep()" id="sheepSize">
+              <option value="">-- Select --</option>
+              <option value="5000">Small — KES 5,000</option>
+              <option value="10000">Large — KES 10,000</option>
+            </select>
+          </div>
+          <div>
+            <label>Quantity (min 3)</label>
+            <input type="number" id="sheepQty" name="sheep_qty" min="3" placeholder="0" oninput="calcSheep()">
+          </div>
+        </div>
+        <div class="subtotal"><span>Sheep subtotal</span><span id="sheepTotal">KES 0</span></div>
+      </div>
+
+      <!-- CATTLE -->
+      <div class="product-block">
+        <h4><i class="fa-solid fa-cow"></i> Cattle</h4>
+        <div>
+          <label>Number of Cattle (min 3)</label>
+          <input type="number" id="cattleQty" name="cattle_qty" min="3" placeholder="0" oninput="calcCattle()">
+          <p class="note">Starting from KES 10,000 each. Final price confirmed on contact.</p>
+        </div>
+        <div class="subtotal"><span>Cattle estimate</span><span id="cattleTotal">KES 0</span></div>
+      </div>
+
+      <!-- CROPS -->
+      <div class="product-block">
+        <h4><i class="fa-solid fa-seedling"></i> Crops & Farm Inputs <span class="negotiable">Negotiable</span></h4>
+        <label>Describe what you need</label>
+        <textarea name="crops_order" placeholder="e.g. 5 bags of maize, fertilizer, tomato seedlings..."></textarea>
+      </div>
+
+      <div class="total-bar">
+        <span>Estimated Total</span>
+        <strong id="grandTotal">KES 0</strong>
+      </div>
+    </div>
+
+    <!-- 3. DELIVERY -->
+    <div class="card">
+      <div class="card-title">3. Delivery Preference</div>
+      <div class="radio-group">
+        <label><input type="radio" name="delivery" value="Farm Pickup"> Farm Pickup</label>
+        <label><input type="radio" name="delivery" value="Delivery"> Delivery to me</label>
+        <label><input type="radio" name="delivery" value="Either"> Either is fine</label>
+      </div>
+      <label>Special Requirements or Questions</label>
+      <textarea name="notes" placeholder="Any special requests or questions..."></textarea>
+    </div>
+
+    <!-- 4. SOURCE -->
+    <div class="card">
+      <div class="card-title">4. How Did You Hear About Us?</div>
+      <select name="source">
+        <option value="">-- Select source --</option>
+        <option>WhatsApp</option>
+        <option>Instagram</option>
+        <option>TikTok</option>
+        <option>Friend / Referral</option>
+        <option>Facebook</option>
+        <option>Other</option>
+      </select>
+    </div>
+<!-- MANUAL MPESA PAYMENT -->
+<div class="card">
+  <div class="card-title">5. Pay with M-Pesa</div>
+  <div style="background:#e8f5e9; border-radius:10px; padding:20px; text-align:center;">
+    <p style="font-size:14px; color:#555;">Send your payment to:</p>
+    <h2 style="color:#2d5a1b; font-size:2rem; margin:10px 0;">0705 070 469</h2>
+    <p style="font-size:13px; color:#555;">Account name: <strong>Lenzis Agro</strong></p>
+    <br>
+    <p style="font-size:14px; color:#555;">Amount to send:</p>
+    <h3 style="color:#c8922a; font-size:1.8rem;" id="payAmount">KES 0</h3>
+    <br>
+    <p style="font-size:12px; color:#999;">
+      After sending, use your <strong>M-Pesa transaction code</strong> as reference when submitting the form.
+    </p>
+  </div>
+  <br>
+  <label>M-Pesa Transaction Code *</label>
+  <input type="text" name="mpesa_code" placeholder="e.g. QGH7KL1234" required>
+</div>
+    <button type="submit" class="btn-submit">
+      <i class="fa-solid fa-paper-plane"></i> &nbsp; Submit Order
+    </button>
+  </form>
+
+  <div class="or-divider">or reach us directly</div>
+
+  <a href="https://wa.me/254705070469" target="_blank" class="btn-whatsapp">
+    <i class="fab fa-whatsapp"></i> Chat with us on WhatsApp
+  </a>
+</div>
+
+<footer>
+  <div class="footer-logo">Lenzis <span>Agro</span> Limited</div>
+  <p>Growing today, for tomorrow.</p>
+  <div class="social-icons">
+    <a href="https://instagram.com/lenzisagro" target="_blank" class="ig" title="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://tiktok.com/@lenzisagro" target="_blank" class="tt" title="TikTok"><i class="fab fa-tiktok"></i></a>
+    <a href="https://wa.me/254705070469" target="_blank" class="wa" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  </div>
+  <p class="copy">&copy; 2026 Lenzis Agro Limited. All rights reserved.</p>
+</footer>
+
+<script>
+  let totals = { eggs:0, chicks:0, chicken:0, goats:0, sheep:0, cattle:0 };
+
+  function updateGrand() {
+    const grand = Object.values(totals).reduce((a,b) => a+b, 0);
+    document.getElementById('grandTotal').textContent = 'KES ' + grand.toLocaleString();
+    document.getElementById('hiddenTotal').value = 'KES ' + grand.toLocaleString();
+  }
+
+  function calcEggs() {
+    const type = document.getElementById('eggType').value;
+    const qty = parseInt(document.getElementById('eggQty').value) || 0;
+    const note = document.getElementById('eggNote');
+    let price = 0, valid = true;
+    if (type === 'retail') {
+      price = qty * 450;
+      note.textContent = '';
+    } else if (type === 'wholesale') {
+      if (qty < 12) { note.textContent = '⚠ Minimum 12 trays for wholesale'; valid = false; }
+      else { note.textContent = qty + ' trays = ' + (qty/12).toFixed(1) + ' crates'; }
+      price = qty * 300;
+    }
+    totals.eggs = (valid && qty > 0) ? price : 0;
+    document.getElementById('eggTotal').textContent = 'KES ' + totals.eggs.toLocaleString();
+    updateGrand();
+  }
+
+  function calcAnimal(selId, qtyId, totalId, key) {
+    const price = parseInt(document.getElementById(selId).value) || 0;
+    const qty = parseInt(document.getElementById(qtyId).value) || 0;
+    totals[key] = (qty >= 3 && price > 0) ? price * qty : 0;
+    document.getElementById(totalId).textContent = 'KES ' + totals[key].toLocaleString();
+    updateGrand();
+  }
+
+  function calcChicks()  { calcAnimal('chickAge',   'chickQty',   'chickTotal',   'chicks');  }
+  function calcChicken() { calcAnimal('chickenSize', 'chickenQty', 'chickenTotal', 'chicken'); }
+  function calcGoats()   { calcAnimal('goatSize',    'goatQty',    'goatTotal',    'goats');   }
+  function calcSheep()   { calcAnimal('sheepSize',   'sheepQty',   'sheepTotal',   'sheep');   }
+
+  function calcCattle() {
+    const qty = parseInt(document.getElementById('cattleQty').value) || 0;
+    totals.cattle = qty >= 3 ? qty * 10000 : 0;
+    document.getElementById('cattleTotal').textContent = 'KES ' + totals.cattle.toLocaleString() + '+';
+    updateGrand();
+  }
+
+function handleSubmit(e) { updateGrand(); updatePayAmount(); }
+
+function updatePayAmount() {
+  const grand = Object.values(totals).reduce((a,b) => a+b, 0);
+  const el = document.getElementById('payAmount');
+  if(el) el.textContent = 'KES ' + grand.toLocaleString();
+}
+
+
+
+</script>
+</body>
+</html>
