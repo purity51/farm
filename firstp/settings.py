@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-nfa7m(%=4*9zq8k(cd_w46ubfq-20o4s%fhq2o+_xv7!1(&u*5'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['farm-1-9riy.onrender.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -50,8 +50,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
-    
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+
 ]
 
 ROOT_URLCONF = 'firstp.urls'
@@ -136,6 +135,6 @@ DEFAULT_FROM_EMAIL = 'mulingepurity51@gmail.com'
 import os
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR,'myapp', 'static'),
 ]
 STATIC_URL = 'static/'
