@@ -5,7 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Farm | Growing Today, For Tomorrow</title>
- <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
   <header>
     <img src="{% static 'images/WhatsApp Image 2026-04-28 at 14.13.38.jpeg' %}" alt="Farm logo" class="logo">
     <div class="header-text">
@@ -27,11 +29,11 @@
 
   <!-- ══ HERO BANNER ══ -->
   <div class="hero">
-    <div class="hero-inner">
+      <div class="hero-inner">
       <p class="eyebrow">Est. on the land we love</p>
       <h2>From Our Fields<br>To Your Table</h2>
       <p>Quality livestock, thriving crops, and sustainable practices — rooted in generations of farming tradition.</p>
-      <a href="aboutus.html" class="hero-btn">Discover Our Story</a>
+      <a href="{% url 'aboutus' %}" class="hero-btn">Discover Our Story</a>
     </div>
   </div>
 
@@ -124,7 +126,7 @@
   <p>Growing today, for tomorrow.</p>
   <div class="social-icons">
     <a href="https://instagram.com/l.e.n.z.i.s" target="_blank" class="ig" title="Instagram"><i class="fab fa-instagram"></i></a>
-    <a href="https://tiktok.com/@lenzis_jones" target="_blank" class="tt" title="TikTok"><i class="fab fa-tiktok"></i></a>
+    <a href="https://tiktok.com/@LenzisUnmatched" target="_blank" class="tt" title="TikTok"><i class="fab fa-tiktok"></i></a>
     <a href="https://wa.me/254705070469" target="_blank" class="wa" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
   </div>
   <p class="copy">&copy; 2026 Lenzis Agro Limited. All rights reserved.</p>
