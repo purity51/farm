@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-nfa7m(%=4*9zq8k(cd_w46ubfq-20o4s%fhq2o+_xv7!1(&u*5
 # Enabled for local development so static files are served during testing.
 DEBUG = True
 
-ALLOWED_HOSTS = ['farm-1-9riy.onrender.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['farm-3-84zh.onrender.com']
 
 
 # Application definition
