@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,13 +21,17 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-nfa7m(%=4*9zq8k(cd_w46ubfq-20o4s%fhq2o+_xv7!1(&u*5'
+# Read secret key and debug from environment for production safety.
+SECRET_KEY = os.environ.get(
+    'DJANGO_SECRET_KEY',
+    'django-insecure-nfa7m(%=4*9zq8k(cd_w46ubfq-20o4s%fhq2o+_xv7!1(&u*5'
+)
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# Enabled for local development so static files are served during testing.
-DEBUG = True
+DEBUG = os.environ.get('DJANGO_DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = ['farm-3-84zh.onrender.com']
+# Hosts allowed to serve the app. Provide as space-separated env var.
+ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOSTS', 'localhost 127.0.0.1').split()
 
 
 # Application definition
@@ -49,7 +54,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
 
 ]
@@ -134,10 +138,32 @@ DEFAULT_FROM_EMAIL = 'mulingepurity51@gmail.com'
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 import os
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR,'myapp', 'static'),]
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage',
 
+# Static files (CSS, JavaScript, Images)
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'myapp', 'static')]
+# Use WhiteNoise for serving static files in production
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATIC_URL = '/static/'
+
+# If a DATABASE_URL environment variable is provided (e.g., Render Postgres),
+# use dj-database-url to configure the DATABASES setting. Otherwise keep sqlite.
+if os.environ.get('DATABASE_URL'):
+    try:
+        import dj_database_url
+
+        DATABASES = {
+            'default': dj_database_url.parse(os.environ.get('DATABASE_URL'), conn_max_age=600)
+        }
+    except Exception:
+        # If dj_database_url is not available, fallback to original sqlite config
+        pass
+
+# Trust the X-Forwarded-Proto header set by Render's load balancer
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+# Optional: enforce HTTPS when deployed (enable via env var)
+SECURE_SSL_REDIRECT = os.environ.get('DJANGO_SECURE_SSL_REDIRECT', 'False') == 'True'
+
+# Allow CSRF when using custom domains on Render
+CSRF_TRUSTED_ORIGINS = [f"https://{h}" for h in ALLOWED_HOSTS if h]
